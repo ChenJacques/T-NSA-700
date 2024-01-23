@@ -1,0 +1,52 @@
+name: Node.js CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3  # Use a specific version of actions/checkout
+
+    - name: Update package lists
+      run: sudo apt-get update
+
+    - name: Install required packages
+      run: |
+        sudo apt-get install -y build-essential curl git openssh-server
+
+    - name: Use Node.js 14.x
+      uses: actions/setup-node@v4
+      with:
+          node-version: 14.x
+          
+    - name: Download Python 2.7
+      run: wget https://www.python.org/ftp/python/2.7/Python-2.7.tgz -P /tmp
+
+    - name: Extract Python 2.7
+      run: tar -xzf /tmp/Python-2.7.tgz -C /tmp
+
+    - name: Configure and install Python 2.7
+      run: |
+        cd /tmp/Python-2.7
+        ./configure
+        make
+        sudo make install
+
+    - name: Install Node.js dependencies for T-NSA-700
+      run: npm install
+      working-directory: ./front
+
+    - name: Build for T-NSA-700
+      run: npm run build
+      working-directory: ./front
+
+    - name: Test for T-NSA-700
+      run: npm run test
+      working-directory: ./front
