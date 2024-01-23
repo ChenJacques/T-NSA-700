@@ -51,6 +51,10 @@ jobs:
       run: npm run test
       working-directory: ./front
       
-    - name: E2E tests
+    - name: Update ChromeDriver
+      run: npx webdriver-manager update --versions.chrome=120.0.6099.216
+      working-directory: ./front
+      
+    - name: Run end-to-end tests
       run: npm run e2e
       working-directory: ./front
