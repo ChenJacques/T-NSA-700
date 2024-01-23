@@ -39,20 +39,20 @@ jobs:
         make
         sudo make install
 
-    - name: Install Node.js dependencies for T-NSA-700
+    - name: Install Node.js dependencies
       run: npm install
+      working-directory: ./front
+
+    - name: Update ChromeDriver
+      run: npx webdriver-manager clean && npx webdriver-manager update
       working-directory: ./front
 
     - name: Build
       run: npm run build
       working-directory: ./front
 
-    - name: Init tests
+    - name: Unit tests
       run: npm run test
-      working-directory: ./front
-      
-    - name: Update ChromeDriver
-      run: npx webdriver-manager update --versions.chrome=114
       working-directory: ./front
       
     - name: Run end-to-end tests
