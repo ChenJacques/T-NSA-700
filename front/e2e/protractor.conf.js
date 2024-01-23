@@ -8,7 +8,7 @@ exports.config = {
   specs: [
     './src/**/*.e2e-spec.ts'
   ],
-  chromeDriver: '../../node_modules/protractor/node_modules/webdriver-manager/selenium/chromedriver_114.0.5735.90',
+  chromeDriver: '../node_modules/protractor/node_modules/webdriver-manager/selenium/chromedriver_114.0.5735.90',
   capabilities: {
     'browserName': 'chrome',
     chromeOptions: {
