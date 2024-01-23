@@ -52,7 +52,7 @@ jobs:
       working-directory: ./front
       
     - name: Update ChromeDriver
-      run: npx webdriver-manager update --versions.chrome=120.0.6099.216
+      run: npx webdriver-manager update --versions.chrome=114
       working-directory: ./front
       
     - name: Run end-to-end tests
