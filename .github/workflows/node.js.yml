@@ -12,14 +12,14 @@ jobs:
 
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@v3  # Use a specific version of actions/checkout
+      uses: actions/checkout@v3
 
     - name: Update package lists
       run: sudo apt-get update
 
     - name: Install required packages
       run: |
-        sudo apt-get install -y build-essential curl git openssh-server
+        sudo apt-get install -y build-essential curl git
 
     - name: Use Node.js 14.x
       uses: actions/setup-node@v4
@@ -43,10 +43,14 @@ jobs:
       run: npm install
       working-directory: ./front
 
-    - name: Build for T-NSA-700
+    - name: Build
       run: npm run build
       working-directory: ./front
 
-    - name: Test for T-NSA-700
+    - name: Init tests
       run: npm run test
+      working-directory: ./front
+      
+    - name: E2E tests
+      run: npm run e2e
       working-directory: ./front
