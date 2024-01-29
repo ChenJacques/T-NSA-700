@@ -31,7 +31,7 @@ jobs:
           echo "PATH=$PATH:/usr/local/bin" >> $GITHUB_ENV
 
       - name: Copy .env
-        run: cp back/.env.example back/.env
+        run: cp .env.example .env
         working-directory: back
 
       - name: Install Dependencies
