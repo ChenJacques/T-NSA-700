@@ -8,7 +8,7 @@ exports.config = {
   specs: [
     './src/**/*.e2e-spec.ts'
   ],
-
+  directConnect: false,
   capabilities: {
     'browserName': 'chrome',
     directConnect: false,
