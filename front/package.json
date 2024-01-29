@@ -1,6 +1,11 @@
 {
   "name": "front",
   "version": "0.0.0",
+  "webdriverManager": {
+  "chrome": {
+    "version": "120.0.6099.224"
+    }
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
