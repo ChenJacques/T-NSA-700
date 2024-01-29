@@ -43,6 +43,11 @@ jobs:
       run: npm install
       working-directory: ./front
 
+    - name: Webdriver-update
+      run: npm run webdriver-update
+      working-directory: ./front
+
+
     - name: Build
       run: npm run build
       working-directory: ./front
