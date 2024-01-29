@@ -10,7 +10,12 @@ exports.config = {
     'browserName': 'chrome',
     chromeOptions: {
       args: ["--headless", "--disable-gpu", "--window-size=800x600", "--no-sandbox", "--disable-dev-shm-usage", "--disable-extensions"],
-      binary: './node_modules/protractor/node_modules/webdriver-manager/selenium/chromedriver_114.0.5735.90'
+      binary: './node_modules/protractor/node_modules/webdriver-manager/selenium/chromedriver_114.0.5735.90',
+      prefs: {
+        "profile.default_content_setting_values.notifications": 1,
+        "profile.managed_default_content_settings.images": 2,
+        "profile.managed_default_content_settings.stylesheets": 2
+      }
     }
   },
 
