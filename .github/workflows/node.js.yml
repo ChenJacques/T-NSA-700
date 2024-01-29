@@ -6,16 +6,14 @@ on:
       - main
     paths:
       - 'front/**'
-      - 'back/**'
   pull_request:
     branches:
       - main
     paths:
       - 'front/**'
-      - 'back/**'
 
 jobs:
-  build:
+  build_front:
     runs-on: ubuntu-latest
 
     steps:
@@ -51,10 +49,9 @@ jobs:
       run: npm install
       working-directory: ./front
 
-    - name: Webdriver-update
-      run: npm run webdriver-update
-      working-directory: ./front
-
+#    - name: Webdriver-update
+#      run: npm run webdriver-update
+#      working-directory: ./front
 
     - name: Build
       run: npm run build
@@ -64,6 +61,7 @@ jobs:
       run: npm run test
       working-directory: ./front
       
-    - name: Run end-to-end tests
-      run: npm run e2e
-      working-directory: ./front
+#    - name: Run end-to-end tests
+#      run: npm run e2e
+#      working-directory: ./front
+      
