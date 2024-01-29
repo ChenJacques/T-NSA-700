@@ -5,13 +5,13 @@ exports.config = {
   specs: [
     './src/**/*.e2e-spec.ts'
   ],
-  directConnect: false, // Set directConnect at the top level
 
   capabilities: {
     'browserName': 'chrome',
     chromeOptions: {
       args: ["--headless", "--disable-gpu", "--window-size=800x600", "--no-sandbox", "--disable-dev-shm-usage", "--disable-extensions"]
-    }
+    },
+    directConnect: false, // Set directConnect at the top level
   },
 
   baseUrl: 'http://localhost:4200/',
