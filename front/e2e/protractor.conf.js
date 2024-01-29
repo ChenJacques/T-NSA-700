@@ -10,7 +10,7 @@ exports.config = {
     'browserName': 'chrome',
     chromeOptions: {
       args: ["--headless", "--disable-gpu", "--window-size=800x600", "--no-sandbox", "--disable-dev-shm-usage", "--disable-extensions"],
-      directConnect: false, // Set directConnect at the top level
+      binary: './node_modules/protractor/node_modules/webdriver-manager/selenium/chromedriver_114.0.5735.90'
     }
   },
 
