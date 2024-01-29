@@ -8,7 +8,7 @@ exports.config = {
   specs: [
     './src/**/*.e2e-spec.ts'
   ],
-  chromeDriver: '../../node_modules/chromedriver/lib/chromedriver/chromedriver',
+  chromeDriver: '../node_modules/chromedriver/lib/chromedriver/chromedriver',
   capabilities: {
     'browserName': 'chrome',
     chromeOptions: {
