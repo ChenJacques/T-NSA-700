@@ -12,9 +12,9 @@ exports.config = {
   capabilities: {
     'browserName': 'chrome',
     chromeOptions: {
+      binary: '/usr/bin/google-chrome',
       args: ["--headless", "--disable-gpu", "--window-size=800x600", "--no-sandbox", "--disable-dev-shm-usage", "--disable-extensions"]
-    },
-    chromeDriver: '../node_modules/chromedriver/lib/chromedriver/chromedriver',
+    }
   },
   directConnect: true,
   baseUrl: 'http://localhost:4200/',
